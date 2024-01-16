@@ -31,7 +31,9 @@
       event.preventDefault();
       var data = event.dataTransfer.getData("text/plain");
       alert(data);
-      myFunction();
+      var script = document.createElement('script');
+      script.innerHTML = 'console.log("Button was dropped and myFunction() was called!"); myFunction();';
+      event.target.appendChild(script);
     });
 
     dropZone.addEventListener("dragover", function(event) {
@@ -193,7 +195,7 @@
     },
     !1
   );
-      alert("Button was dropped and myFunction() was called!");
+      alert("myFunction() was called!");
     }
   </script>
 
